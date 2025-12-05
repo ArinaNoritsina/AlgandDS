@@ -14,33 +14,22 @@ void initialize_graph(adjacency_matrix *g) {
     }
 }
 
-int main() {
-    adjacency_matrix myGraph;
-    initialize_graph(&myGraph);
-    
-    myGraph.nvertices = 4;
-    myGraph.weight[1][2] = 5;
-    myGraph.weight[2][3] = 10;
-    myGraph.weight[3][1] = 3;
-    myGraph.weight[4][2] = 8;
-    
-    cout << "Матрица смежности (" << myGraph.nvertices << " вершины):" << endl;
+void print_graph( const adjacency_matrix *g){
+    cout << "Матрица смежности (" << g->nvertices << " вершины):" << endl;
     cout << "-----------------------------------" << endl;
 
     cout << "   "; 
-    for (int i = 1; i <= myGraph.nvertices; i++) {
+    for (int i = 1; i <= g->nvertices; i++) {
         cout << setw(3) << i << " ";
     }
     cout << endl;
 
-    for (int i = 1; i <= myGraph.nvertices; i++) {
+    for (int i = 1; i <= g->nvertices; i++) {
         cout << i << "| "; 
-        for (int j = 1; j <= myGraph.nvertices; j++) {
+        for (int j = 1; j <= g->nvertices; j++) {
             
-            cout << setw(3) << myGraph.weight[i][j] << " ";
+            cout << setw(3) << g->weight[i][j] << " ";
         }
         cout << endl;
     }
-
-    return 0;
 }

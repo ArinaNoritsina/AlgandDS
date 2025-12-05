@@ -8,4 +8,7 @@ typedef struct {
     int nvertices;                  /* Количество вершин в графе */
 } adjacency_matrix;
 
+// Прототипы функций
+void initialize_graph(adjacency_matrix *g);
+void print_graph( const adjacency_matrix *g);
 #endif
